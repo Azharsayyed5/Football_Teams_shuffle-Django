@@ -1,0 +1,10 @@
+<html>
+    <body>
+        <table>
+            {%for p in tms%}
+            <tr><td>{{p.id}}</td><td><img src="{{p.imageurl.url}}" height="30" width="30"/></td>
+                <td>{{p.Tname}}</td></tr>
+            {%endfor%}
+        </table>
+    </body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>shuffle teams</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            {% load staticfiles %}
+            <style>
+                .container-fluid{
+                    background-color: rgb(7, 7, 97);
+                    color:white;
+                    padding-bottom: 15px;
+                    padding-top: 20px;
+                    text-align: center;
+                }
+                
+                .center{
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 20px;
+                    height: 130px;
+                    align-items: center;
+                    background-blend-mode:multiply;
+                }
+                .col-md{
+                    margin-right: 8px;
+                }
+                .table-borderless{
+                    padding-bottom: 15px;
+                }
+
+                
+            </style>
+    </head>
+    <body>
+        <div class="container-fluid" >
+            <div class="uefa">
+                <img class="center" src={% static "testimg.png" %} alt="UEFA">
+            </div>
+
+            <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md">
+                          <h5 class="border border-dark" style="background: linear-gradient(to bottom, #00ccff 70%, #ff99cc 30%)">Group A </h5>
+                      <table class="table-borderless">
+                            <tbody>
+                              {% for team in tms|slice:":4" %}
+                                    <tr>                            
+                                      <td><img src="{{team.imageurl.url}}" height="30" width="30"/></td>
+                                      <td>{{team.Tname}}</td>
+                                    </tr>
+                                    {%endfor%}
+
+                                  </tbody>
+                      </table>
+                      </div>
+
+                      </table>
+                      <div class="col-md">
+                            <h5 class="border border-dark" style="background: linear-gradient(to bottom, #00ccff 70%, #ff99cc 30%)">Group B</h4>
+                                <table class="table-borderless">
+                                        <tbody>  
+                                            {% for team in tms|slice:"4:8" %}
+                                          <tr>                            
+                                            <td><img src="{{team.imageurl.url}}" height="30" width="30"/></td>
+                                            <td>{{team.Tname}}</td>
+                                          </tr>
+                                          {%endfor%}
+                                        </tbody>
+                                  </table>
+                                </div>
+                      <div class="col-md">
+                            <h5 class="border border-dark" style="background: linear-gradient(to bottom, #00ccff 70%, #ff99cc 30%)">Group C</h4>
+                                <table class="table-borderless">
+                                        <tbody>
+                                            {% for team in tms|slice:"8:12" %}
+                                          <tr>   
+                                            <td><img src="{{team.imageurl.url}}" height="30" width="30"/></td>
+                                            <td>{{team.Tname}}</td>
+                                          </tr>
+                                          {%endfor%}
+                                          </tbody>
+                                  </table>
+                      </div>
+                      <div class="col-md">
+                            <h5 class="border border-dark" style="background: linear-gradient(to bottom, #00ccff 70%, #ff99cc 30%)">Group D</h4>
+                                <table class="table-borderless">
+                                        <tbody>
+                                            {% for team in tms|slice:"12:16" %}
+                                                <tr>   
+                                            <td><img src="{{team.imageurl.url}}" height="30" width="30"/></td>
+                                            <td>{{team.Tname}}</td>
+                                          </tr>
+                                          {%endfor%}
+                                              </tbody>
+                                  </table>
+                      </div>
+                    </div>  
+                  </div>
+
+                  <div class="container-fluid">
+                    <div class="row">
+
+                      <div class="col-md">
+                          <h5 class="border border-dark" style="background: linear-gradient(to bottom, #00ccff 70%, #ff99cc 30%)">Group E </h5>
+                          <table class="table-borderless">
+                            <tbody>
+                                {% for team in tms|slice:"16:20" %}
+                                    <tr>                            
+                                      <td><img src="{{team.imageurl.url}}" height="30" width="30"/></td>
+                                      <td>{{team.Tname}}</td>
+                                  {%endfor%}
+                                  </tbody>
+                      </table>
+                          </div>           
+                          
+                          <div class="col-md">
+                              <h5 class="border border-dark" style="background: linear-gradient(to bottom, #00ccff 70%, #ff99cc 30%)">Group F </h5>
+                              <table class="table-borderless">
+                                <tbody>
+                                    {% for team in tms|slice:"20:24" %}
+                                        <tr>                            
+                                          <td><img src="{{team.imageurl.url}}" height="30" width="30"/></td>
+                                          <td>{{team.Tname}}</td>
+                                      {%endfor%}
+                                      </tbody>
+                          </table>
+                              </div>                   
+
+                              <div class="col-md">
+                                  <h5 class="border border-dark" style="background: linear-gradient(to bottom, #00ccff 70%, #ff99cc 30%)">Group G </h5>
+                                  <table class="table-borderless">
+                                    <tbody>
+                                        {% for team in tms|slice:"24:28" %}
+                                            <tr>                            
+                                              <td><img src="{{team.imageurl.url}}" height="30" width="30"/></td>
+                                              <td>{{team.Tname}}</td>
+                                          {%endfor%}
+                                          </tbody>
+                              </table>
+                                  </div>                   
+
+                                  <div class="col-md">
+                                      <h5 class="border border-dark" style="background: linear-gradient(to bottom, #00ccff 70%, #ff99cc 30%)">Group H </h5>
+                                      <table class="table-borderless">
+                                        <tbody>
+                                            {% for team in tms|slice:"28:32" %}
+                                                <tr>                            
+                                                  <td><img src="{{team.imageurl.url}}" height="30" width="30"/></td>
+                                                  <td>{{team.Tname}}</td>
+                                              {%endfor%}
+                                              </tbody>
+                                  </table>
+                                      </div>                   
+                          </div>
+                        </div>
+            <div class="container-fluid footer">
+              <h3 style="font-family: 'Times New Roman', Times, serif">UEFA Premier League  </h3>
+              <p style="font-family:Arial, Helvetica, sans-serif">All Rights reserved ©</p>
+          </div>
+
+                  
+            </div>
+    </body>
+</html>
